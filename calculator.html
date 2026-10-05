@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body class="bg-rose-100">
+    <div id="app">
+        <div class="flex justify-center items-center h-screen p-2">
+            <div class="w-70 h-100 border-1-gray-600 bg-white">
+                <div class="text-center">
+                    <p class="w-70 h-15 bg-sky-900 text-white font-semibold text-lg py-4">Calculator</p>
+                </div>
+
+                <div class="flex item-bottom p-5">
+                    <input v-model="p" class="w-150 h-10 text-end flex item-bottom bg-rose-100 px-5" type="text">
+                </div>
+                <div class="flex justify-center items-center gap-2">
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-rose-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="setOperator('/')" class="cursor-pointer font-semibold">/</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-rose-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="setOperator('*')" class="cursor-pointer font-semibold">*</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-30 h-10 bg-rose-500 text-white rounded-lg py-2 ">
+                            <button @click="del('')" class="cursor-pointer font-semibold">DEL</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center gap-2 mt-2">
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-gray-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('7')" class="cursor-pointer font-semibold">7</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-gray-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('8')" class="cursor-pointer font-semibold">8</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-gray-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('9')" class="cursor-pointer font-semibold">9</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-13 h-10 bg-rose-500 text-sky-900 rounded-lg py-2 text-white ">
+                            <button @click="clearDisplay()" class="cursor-pointer font-semibold">c</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center gap-2 mt-2">
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-gray-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('4')" class="cursor-pointer font-semibold">4</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-gray-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('5')" class="cursor-pointer font-semibold">5</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-gray-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('6')" class="cursor-pointer font-semibold">6</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-13 h-10 bg-rose-500 text-sky-900 rounded-lg py-2 text-white">
+                            <button @click="setOperator('-')" class="cursor-pointer font-semibold">-</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center gap-2 mt-2">
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-gray-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('1')" class="cursor-pointer font-semibold">1</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-gray-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('2')" class="cursor-pointer font-semibold">2</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-gray-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('3')" class="cursor-pointer font-semibold">3</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-13 h-10 bg-rose-500 text-sky-900 rounded-lg py-2 text-white">
+                            <button @click="setOperator('+')" class="cursor-pointer font-semibold">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center gap-2 mt-2">
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-rose-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="num('0')" class="cursor-pointer font-semibold">0</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-15 h-10 bg-rose-100 text-sky-900 rounded-lg py-2 ">
+                            <button @click="operator('.')" class="cursor-pointer font-semibold">.</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-30 h-10 bg-sky-900 text-white rounded-lg py-2 ">
+                            <button @click="equals()" class="cursor-pointer font-semibold">=</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        Vue.createApp({
+            data() {
+                return {
+                    currentInput: "",
+                    operator: "",
+                    p: "",
+                    firstNum: 0,
+                    success: '',
+
+                }
+            },
+
+            methods: {
+                num(numbers) {
+                    this.currentInput += numbers;
+
+                    this.p = this.currentInput;
+
+                },
+
+                clearDisplay() {
+                    this.currentInput = '';
+                    this.p = '';
+
+                    this.operator = "";
+                    this.firstNum = 0;
+                    this.type = 0;
+                },
+
+                setOperator(op) {
+
+                    if (this.operator === "" && this.currentInput !== ""){
+                        this.firstNum = parseFloat(this.currentInput);
+                    }
+                    else {
+                        this.show();
+                    }
+
+                    this.operator = op;
+                    this.currentInput = '',
+                    this.p = this.firstNum;
+
+                },
+
+                show() {
+
+                    let secondNum = parseFloat(this.currentInput);
+                    if (isNaN(secondNum)){
+                        return true;
+                    } if (this.operator === '/' && secondNum === 0){
+                        this.p ='Error';
+                        return false;
+
+                    } 
+                    if (secondNum) {
+
+
+                    switch (this.operator) {
+                        case "+":
+                            this.p = this.firstNum + secondNum;
+                            break;
+
+                        case "-":
+                            this.p = this.firstNum - secondNum;
+                            break;
+
+                        case "*":
+                            this.p = this.firstNum * secondNum;
+                            break;
+
+                        case "/":
+                            if (this.p == 0) {this.p ='Error'; return; }
+                            this.p = this.firstNum / numb;
+                            break;
+
+                            default:
+                                this.firstNum = secondNum;
+                                return true;
+                        }
+                    }
+                    
+
+                    this.p.value = this.firstNum;
+                    this.currentInput = "";
+                },
+
+                del(){
+                    this.currentInput = '';
+                    this.p = '';
+                    this.firstNum = 0;
+                    this.operator = 0;
+                },
+
+                equals(){
+                    let success = this.show();
+                    if (!this.success){
+                        return;
+                    }
+                    this.operator = '';
+                },
+
+            }
+
+        }).mount('#app');
+
+
+    </script>
+
+
+
+</body>
+
+</html>
