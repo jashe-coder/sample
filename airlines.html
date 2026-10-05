@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <div id="app">
+        <div class="w-full">
+            <nav class="flex justify-between items-center bg-[#0A0C96] fixed z-999 w-full h-fit py-3 p-20 ">
+                <div class="flex justify-start">
+                    <img src="logo.png" alt="">
+                </div>
+                <div class="flex items-center gap-5">
+                    <a href="#book" class="font-semibold cursor-pointer text-white">BOOK</a>
+                    <a href="#manage" class="font-semibold cursor-pointer text-white ">MANAGE</a>
+                    <a href="#wherewefly" class="font-semibold cursor-pointer text-white">WHERE WE FLY</a>
+                    <a href="#about" class="font-semibold cursor-pointer text-white">ABOUT</a>
+                    <a href="#help" class="font-semibold cursor-pointer text-white">HELP</a>
+
+                </div>
+                <div class="flex gap-3">
+                    <p class="text-white cursor-pointer font-semibold">🌏︎ PH</p>
+                    <button class="text-white cursor-pointer font-semibold">LOG IN</button>
+                </div>
+            </nav>
+        </div>
+        <div class="h-20"></div>
+        <div class="relative">
+            <img class="w-339 h-160 absolute"
+                src="https://i.pinimg.com/1200x/1d/24/ca/1d24ca73563ba6d1a2066dbdb62e3100.jpg" alt="">
+            <div class="px-70 relative py-90">
+                <p class="text-white text-3xl px-30">Enjoy flexible travel with</p>
+                <p class="text-white font-bold text-5xl font-sans px-10">A FREE DATE CHANGE</p>
+                <p class="text-white font-bold text-3xl font-sans px-55">on all new tickets</p>
+                <div class="px-80">
+                    <button class="text-white font-bold text-lg font-sans mt-3 bg-blue-900 rounded-md py-3 px-5">Book
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---BOOK SECTION--- -->
+        <section id="book">
+            <div class="flex justify-center items-center">
+                <img src="flightxt.png" alt="">
+            </div>
+            <div class="text-center mt-5">
+                <p class="text-black font-semibold">Search for Lumé Air flights and book online. </p>
+                <p class="text-black font-semibold">See our routes and schedules, and discover more about the experience
+                    you
+                    can look forward
+                    to on board.</p>
+            </div>
+
+            <div class="flex flex-col justify-center items-center mt-5">
+                <div
+                    class="w-250 border py-7 bg-white rounded-sm border-gray-400 relative flex justify-start gap-3 p-2">
+                    <p class="text-gray-500 text-sm mt-3">Return</p>
+                    <p class="text-gray-500 text-sm mt-3">One Way</p>
+                    <p class="text-gray-500 text-sm mt-3">Multi-City</p>
+
+                </div>
+                <div class="w-250 h-90 bg-[#D9D9D9] border border-gray-200">
+                    <p class="text-gray-500 text-sm p-4">Log in to book Classic Rewards ></p>
+                    <div class="grid grid-cols-3 p-10 gap-4">
+                        <div class="bg-white w-70 h-20 rounded-lg">
+                            <p class="text-gray-500 text-sm px-3 mt-1 ">Departure Airport</p>
+                            <p class="text-black text-xl text-start px-3 mt-5 font-semibold">CEBU (CEB)</p>
+                        </div>
+                        <div class="bg-white w-70 h-20 rounded-lg">
+                            <p class="text-gray-500 text-sm p-4 text-start mt-4">Arrival Airport</p>
+                        </div>
+                        <div class="bg-white w-70 h-20 rounded-lg">
+                            <p class="text-gray-500 text-sm p-4 text-start mt-4">Departure - Returning</p>
+                        </div>
+                        <div class="bg-white w-70 h-20 rounded-lg">
+                            <p class="text-gray-500 text-sm px-3 ">Passenger</p>
+                            <p class="text-black text-xl text-start px-3 mt-5 font-semibold">1 Adult</p>
+                        </div>
+                        <div class="bg-white w-70 h-20 rounded-lg">
+                            <p class="text-gray-500 text-sm px-3 ">Class</p>
+                            <p class="text-black text-xl text-start px-3 mt-5 font-semibold">ECONOMY CLASS</p>
+                        </div>
+                        <button class="bg-[#0A0C96] w-70 h-20 rounded-lg text-white">Search Flights</button>
+                    </div>
+                    <p class="text-gray-500 text-sm p-4">Use promotional code </p>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- ---MANAGE SECTION -->
+
+        <section id="manage">
+            <div class="flex justify-center items-center py-4">
+                <p class="font-semibold">The <span class="font-bold">Lumé Air</span> Experience</p>
+            </div>
+            <div>
+                <div class="flex justify-center items-center">
+                    <p class="text-4xl font-bold font-serif">Cabin Features</p>
+                </div>
+                <div class="flex justify-center items-center mt-3">
+                    <p class="font-semibold">Relax in comfort and discover what it means to Fly Better with us.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="grid grid-cols-2">
+                    <div class="p-30 w-250">
+                        <img class="w-150 h-90 rounded-xl"
+                            src="https://i.pinimg.com/736x/3c/cc/36/3ccc362d458b912f36d4500124cda200.jpg" alt="">
+                    </div>
+                    <div class="py-40">
+                        <div class="shadow-2xl w-130 h-65 rounded-xl">
+                            <p class="p-5 px-20 text-2xl font-serif">First Class</p>
+                            <div class="border border-blue-500 w-15 h-fit mx-22"></div>
+                            <p class="font-serif text-black p-5 px-20 text-center">Make the journey your own in First
+                                Class.<br>Slide the doors closed on your Private Suite,<br>
+                                adjust the mood lighting, and enjoy dining<br> and entertainment on your terms.</p>
+                            <p class="text-black p-5 px-20">Explore First Class</p>
+
+                        </div>
+                    </div>
+
+                    <!-- ..card two -->
+                    <div class="py-40 p-30">
+                        <div class="shadow-2xl w-130 h-65 rounded-xl">
+                            <p class="p-10 text-2xl font-serif py-2">Business Class</p>
+                            <div class="border border-blue-500 w-15 h-fit mx-10"></div>
+                            <p class="font-serif text-black p-5 px-10 text-center">Fly Business Class and arrive
+                                inspired.<br> Stretch out in lie-flat comfort, dine on<br> international cuisine, and
+                                take a
+                                stroll to the A380 Onboard Lounge.</p>
+                            <p class="text-black p-5 mx-3">Explore Business Class</p>
+
+                        </div>
+                    </div>
+
+                    <div class="py-15 pr-35 w-250">
+                        <img class="w-150 h-90 rounded-xl"
+                            src="https://i.pinimg.com/1200x/14/90/fb/1490fbc5d0eed46ad4069376dc1d82d3.jpg" alt="">
+                    </div>
+
+                    <!-- card three -->
+
+                    <div class="p-30 w-250">
+                        <img class="w-150 h-90 rounded-xl"
+                            src="https://i.pinimg.com/1200x/72/23/7b/72237b7b94edba5c0dedc71234854391.jpg" alt="">
+                    </div>
+
+                    <div class="py-40">
+                        <div class="shadow-2xl w-130 h-65 rounded-xl">
+                            <p class="p-5 px-20 text-2xl font-serif py-2">Premium Class</p>
+                            <div class="border border-blue-500 w-15 h-fit mx-21"></div>
+                            <p class="font-serif text-black p-5 px-20 text-center">Choose a higher level of comfort and
+                                <br>
+                                relaxation in Premium Economy. Recline your <br> cream leather seat, extend the leg
+                                rests,
+                                and <br> relax into a more luxurious journey.
+                            </p>
+                            <p class="text-black p-5 px-20">Explore Premium Class</p>
+
+                        </div>
+                    </div>
+
+                    <!-- card four -->
+
+                    <div class="py-30 p-30">
+                        <div class="shadow-2xl w-130 h-65 rounded-xl">
+                            <p class="px-10 text-2xl font-serif py-2">Economy Class</p>
+                            <div class="border border-blue-500 w-15 h-fit mx-10"></div>
+                            <p class="font-serif text-black p-5 px-10 text-center">Experience an Economy Class that
+                                feels
+                                like<br> an upgrade. Sit back in comfort, enjoy<br> delicious multicourse meals, and
+                                lose<br> yourself in thousands of movies, TV shows and more.</p>
+                            <p class="text-black p-5 mx-3">Explore Economy Class</p>
+
+                        </div>
+                    </div>
+
+                    <div class="py-15 pr-35 w-250">
+                        <img class="w-150 h-90 rounded-xl"
+                            src="https://i.pinimg.com/1200x/90/e2/d3/90e2d3d995710c49f6f1d99564c1d8a8.jpg" alt="">
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- ....WHERE WE FLY -->
+
+        <section id="wherewefly">
+            <div>
+                <div class="text-center py-10">
+                    <p class="font-semibold">Featured destinations from <span
+                            class="font-bold text-2xl font-serif">Philippines</span></p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 h-fit px-10">
+                    <div v-for="(places, index) in destinationplaces" :key="places.id">
+                        <div class="shadow-2xl w-150 h-120 rounded-xl flex flex-col items-center">
+                            <img :src="places.img" alt="" class="w-150 h-90 rounded-xl">
+                            <div class="flex">
+                                <div class="">
+                                    <p class="text-black text-center font-semibold mt-5">{{places.country}}</p>
+                                    <p class="text-black text-center font-bold">{{places.place}}</p>
+                                    <p class="text-black text-center font-semibold">{{places.text}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="flex justify-center items-center mt-10">
+                    <button class="border border-black bg-white text-black px-5 py-3 rounded-xl cursor-pointer">More
+                        destinations</button>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- ....ABOUT -->
+        <section id="about">
+            <div>
+                <div class="flex justify-center items-center mt-15">
+                    <p class="font-bold text-black text-3xl font-serif">ABOUT US</p>
+                </div>
+                <div class="flex flex-row gap-20 mt-10 justify-center items-center">
+                    <img src="https://i.pinimg.com/736x/a4/c2/56/a4c256fd317d56020997d3e1efb1e454.jpg" alt=""
+                        class="w-40 h-40 rounded-full">
+                    <img src="https://i.pinimg.com/1200x/13/98/95/1398958ce8b9382314fde2505b4233f2.jpg" alt=""
+                        class="w-40 h-40 rounded-full">
+                    <img src="https://i.pinimg.com/1200x/e5/e9/f5/e5e9f56b964421c499f1e08c42639c02.jpg" alt=""
+                        class="w-40 h-40 rounded-full">
+                    <img src="https://i.pinimg.com/1200x/0a/b5/d3/0ab5d3d3b068c7023944d788a30dc89b.jpg" alt=""
+                        class="w-40 h-40 rounded-full">
+
+                </div>
+                <div class="flex justify-center items-center gap-40 mt-5">
+                    <p class="text-black underline">Our Business</p>
+                    <p class="text-black underline">Our Planet</p>
+                    <p class="text-black underline">Our People</p>
+                    <p class="text-black underline">Our Communities</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ...HELP -->
+        <section id="help">
+
+            <div>
+                <div class="text-center mt-20">
+                    <p class="text-1xl font-serif">Help and support</p>
+                    <p class="font-bold text-3xl font-serif mt-3">Baggage portal</p>
+                    <p class="mt-4">Find out how much baggage and luggage you can take on board, and learn all about our
+                        baggage rules.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TABLET -->
+
+    <section class="sm:hidden md:flex lg:hidden ">
+        <div class="w-full">
+            <nav class="flex justify-between items-center bg-[#0A0C96] fixed z-999 w-full h-fit py-3 p-20 ">
+                <div class="flex justify-start">
+                    <img src="logo.png" alt="">
+                </div>
+                <div class="flex items-center gap-5">
+                    <a href="#book" class="font-semibold cursor-pointer text-white">BOOK</a>
+                    <a href="#manage" class="font-semibold cursor-pointer text-white ">MANAGE</a>
+                    <a href="#wherewefly" class="font-semibold cursor-pointer text-white">WHERE WE FLY</a>
+                    <a href="#about" class="font-semibold cursor-pointer text-white">ABOUT</a>
+                    <a href="#help" class="font-semibold cursor-pointer text-white">HELP</a>
+
+                </div>
+                <div class="flex gap-3">
+                    <p class="text-white cursor-pointer font-semibold">🌏︎ PH</p>
+                    <button class="text-white cursor-pointer font-semibold">LOG IN</button>
+                </div>
+            </nav>
+        </div>
+        <div class="h-20"></div>
+        <div class="relative">
+            <img class="w-339 h-160 absolute"
+                src="https://i.pinimg.com/1200x/1d/24/ca/1d24ca73563ba6d1a2066dbdb62e3100.jpg" alt="">
+            <div class="px-70 relative py-90">
+                <p class="text-white text-3xl px-30">Enjoy flexible travel with</p>
+                <p class="text-white font-bold text-5xl font-sans px-10">A FREE DATE CHANGE</p>
+                <p class="text-white font-bold text-3xl font-sans px-55">on all new tickets</p>
+                <div class="px-80">
+                    <button class="text-white font-bold text-lg font-sans mt-3 bg-blue-900 rounded-md py-3 px-5">Book
+                        Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+
+                    destinationplaces: [
+                        {
+                            id: 1,
+                            img: 'https://i.pinimg.com/736x/4e/20/ea/4e20ea9244e3fe51997a6677b14941fd.jpg',
+                            country: 'United Kingdom',
+                            place: 'London',
+                            text: 'Discover for yourself'
+                        }
+                        ,
+
+                        {
+                            id: 2,
+                            img: 'https://i.pinimg.com/736x/22/47/bb/2247bb242dc10f9c29d03ac54cec68e8.jpg',
+                            country: 'United Arab Emirates',
+                            place: 'Dubai',
+                            text: 'Discover for yourself'
+                        }
+                        ,
+
+                        {
+                            id: 3,
+                            img: 'https://i.pinimg.com/736x/1b/ad/5c/1bad5c7a0bfc1ddd39c53516ebfb28a5.jpg',
+                            country: 'Pakistan',
+                            place: 'Karachi',
+                            text: 'Discover for yourself'
+                        }
+                        ,
+
+                        {
+                            id: 4,
+                            img: 'https://i.pinimg.com/736x/4d/81/67/4d8167930992e5a618c5b98100d861b0.jpg',
+                            country: 'Maldives',
+                            place: 'Malé',
+                            text: 'Discover for yourself'
+                        }
+
+
+                    ]
+
+
+
+
+
+                }
+            },
+
+            methods: {
+
+            }
+
+        }).mount('#app');
+    </script>
+
+</body>
+
+</html>
