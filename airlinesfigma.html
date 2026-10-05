@@ -1,0 +1,733 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lumé Air</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body class="overflow-x-hidden">
+
+    <div id="app">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <nav class="fixed top-0 left-0 z-50 w-full bg-[#0A0C96] px-4 py-3 sm:px-6 lg:px-12 xl:px-20">
+
+            <div class="mx-auto flex max-w-7xl items-center justify-between">
+
+                <!-- Logo -->
+                <div class="shrink-0">
+                    <img src="logo.png" alt="Lumé Air" class="h-auto w-24 sm:w-28 lg:w-32">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden items-center gap-4 lg:flex xl:gap-6">
+
+                    <a href="#book" class="cursor-pointer font-semibold text-white transition hover:text-gray-300">
+                        BOOK
+                    </a>
+
+                    <a href="#manage" class="cursor-pointer font-semibold text-white transition hover:text-gray-300">
+                        MANAGE
+                    </a>
+
+                    <a href="#wherewefly"
+                        class="cursor-pointer font-semibold text-white transition hover:text-gray-300">
+                        WHERE WE FLY
+                    </a>
+
+                    <a href="#about" class="cursor-pointer font-semibold text-white transition hover:text-gray-300">
+                        ABOUT
+                    </a>
+
+                    <a href="#help" class="cursor-pointer font-semibold text-white transition hover:text-gray-300">
+                        HELP
+                    </a>
+
+                </div>
+
+                <!-- Right Side -->
+                <div class="hidden items-center gap-3 lg:flex">
+
+                    <p class="cursor-pointer font-semibold text-white">
+                        🌏︎ PH
+                    </p>
+
+                    <button class="font-semibold text-white">
+                        LOG IN
+                    </button>
+
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenu = !mobileMenu" class="text-2xl text-white lg:hidden">
+
+                    <i :class="mobileMenu
+                            ? 'fa-solid fa-xmark'
+                            : 'fa-solid fa-bars'">
+                    </i>
+
+                </button>
+
+            </div>
+
+            <!-- Mobile Menu -->
+            <div v-if="mobileMenu" class="mt-4 border-t border-blue-400 pt-4 lg:hidden">
+
+                <div class="flex flex-col gap-4 pb-3">
+
+                    <a @click="mobileMenu = false" href="#book" class="font-semibold text-white">
+                        BOOK
+                    </a>
+
+                    <a @click="mobileMenu = false" href="#manage" class="font-semibold text-white">
+                        MANAGE
+                    </a>
+
+                    <a @click="mobileMenu = false" href="#wherewefly" class="font-semibold text-white">
+                        WHERE WE FLY
+                    </a>
+
+                    <a @click="mobileMenu = false" href="#about" class="font-semibold text-white">
+                        ABOUT
+                    </a>
+
+                    <a @click="mobileMenu = false" href="#help" class="font-semibold text-white">
+                        HELP
+                    </a>
+
+                    <div class="flex gap-4 border-t border-blue-400 pt-4">
+
+                        <p class="font-semibold text-white">
+                            🌏︎ PH
+                        </p>
+
+                        <button class="font-semibold text-white">
+                            LOG IN
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="relative mt-[64px] min-h-[500px] overflow-hidden sm:min-h-[550px] lg:min-h-[650px]">
+
+            <!-- Hero Image -->
+            <img src="https://i.pinimg.com/1200x/1d/24/ca/1d24ca73563ba6d1a2066dbdb62e3100.jpg" alt="Lumé Air"
+                class="absolute inset-0 h-full w-full object-cover">
+
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black/20"></div>
+
+            <!-- Hero Content -->
+            <div
+                class="relative z-10 flex min-h-[500px] flex-col items-center justify-center px-4 text-center sm:min-h-[550px] lg:min-h-[650px]">
+
+                <p class="text-xl text-white sm:text-2xl lg:text-3xl">
+                    Enjoy flexible travel with
+                </p>
+
+                <p class="mt-2 text-3xl font-bold font-sans text-white sm:text-4xl lg:text-5xl">
+                    A FREE DATE CHANGE
+                </p>
+
+                <p class="mt-2 text-xl font-bold font-sans text-white sm:text-2xl lg:text-3xl">
+                    on all new tickets
+                </p>
+
+                <div class="mt-5">
+                    <button
+                        class="rounded-md bg-blue-900 px-5 py-3 text-lg font-bold font-sans text-white transition hover:bg-blue-800">
+                        Book Now
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BOOK SECTION ================= -->
+
+        <section id="book" class="scroll-mt-20 px-4 py-10 sm:px-6 lg:px-10">
+
+            <div class="flex justify-center">
+
+                <img src="flightxt.png" alt="Flight" class="max-w-full object-contain">
+
+            </div>
+
+            <div class="mx-auto mt-5 max-w-4xl text-center">
+
+                <p class="font-semibold text-black">
+                    Search for Lumé Air flights and book online.
+                </p>
+
+                <p class="mt-1 font-semibold text-black">
+                    See our routes and schedules, and discover more about the experience
+                    you can look forward to on board.
+                </p>
+
+            </div>
+
+
+            <!-- Booking Box -->
+            <div class="mx-auto mt-6 w-full max-w-5xl">
+
+                <!-- Booking Type -->
+                <div class="flex flex-wrap gap-5 rounded-sm border border-gray-400 bg-white p-4 sm:p-6">
+
+                    <button class="text-sm text-gray-500">
+                        Return
+                    </button>
+
+                    <button class="text-sm text-gray-500">
+                        One Way
+                    </button>
+
+                    <button class="text-sm text-gray-500">
+                        Multi-City
+                    </button>
+
+                </div>
+
+
+                <!-- Booking Form -->
+                <div class="rounded-sm border border-gray-200 bg-[#D9D9D9] p-4 sm:p-6 lg:p-8">
+
+                    <p class="mb-5 text-sm text-gray-500">
+                        Log in to book Classic Rewards
+                    </p>
+
+
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+                        <!-- Departure -->
+                        <div class="min-h-20 rounded-lg bg-white p-3">
+
+                            <p class="text-sm text-gray-500">
+                                Departure Airport
+                            </p>
+
+                            <p class="mt-3 text-lg font-semibold text-black sm:text-xl">
+                                CEBU (CEB)
+                            </p>
+
+                        </div>
+
+
+                        <!-- Arrival -->
+                        <div class="min-h-20 rounded-lg bg-white p-3">
+
+                            <p class="text-sm text-gray-500">
+                                Arrival Airport
+                            </p>
+
+                        </div>
+
+
+                        <!-- Date -->
+                        <div class="min-h-20 rounded-lg bg-white p-3">
+
+                            <p class="text-sm text-gray-500">
+                                Departure - Returning
+                            </p>
+
+                        </div>
+
+
+                        <!-- Passenger -->
+                        <div class="min-h-20 rounded-lg bg-white p-3">
+
+                            <p class="text-sm text-gray-500">
+                                Passenger
+                            </p>
+
+                            <p class="mt-3 text-lg font-semibold text-black sm:text-xl">
+                                1 Adult
+                            </p>
+
+                        </div>
+
+
+                        <!-- Class -->
+                        <div class="min-h-20 rounded-lg bg-white p-3">
+
+                            <p class="text-sm text-gray-500">
+                                Class
+                            </p>
+
+                            <p class="mt-3 text-lg font-semibold text-black sm:text-xl">
+                                ECONOMY CLASS
+                            </p>
+
+                        </div>
+
+
+                        <!-- Search -->
+                        <button
+                            class="min-h-20 rounded-lg bg-[#0A0C96] font-semibold text-white transition hover:bg-blue-800">
+
+                            Search Flights
+
+                        </button>
+
+                    </div>
+
+
+                    <p class="mt-5 text-sm text-gray-500">
+                        Use promotional code
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MANAGE SECTION ================= -->
+
+        <section id="manage" class="scroll-mt-20 px-4 py-10 sm:px-6 lg:px-10">
+
+            <div class="text-center">
+
+                <p class="font-semibold">
+                    The <span class="font-bold">Lumé Air</span> Experience
+                </p>
+
+            </div>
+
+            <div class="mt-5 text-center">
+
+                <p class="font-serif text-3xl font-bold sm:text-4xl">
+                    Cabin Features
+                </p>
+
+                <p class="mt-3 font-semibold">
+                    Relax in comfort and discover what it means to Fly Better with us.
+                </p>
+
+            </div>
+
+
+            <!-- Cabin Cards -->
+            <div class="mx-auto mt-10 max-w-7xl">
+
+                <!-- FIRST CLASS -->
+
+                <div class="grid items-center gap-8 py-8 lg:grid-cols-2">
+
+                    <div class="flex justify-center">
+
+                        <img src="https://i.pinimg.com/736x/3c/cc/36/3ccc362d458b912f36d4500124cda200.jpg"
+                            alt="First Class" class="h-64 w-full max-w-xl rounded-xl object-cover sm:h-80">
+
+                    </div>
+
+                    <div class="flex justify-center">
+
+                        <div class="w-full max-w-xl rounded-xl p-6 shadow-2xl sm:p-10">
+
+                            <p class="text-2xl font-serif">
+                                First Class
+                            </p>
+
+                            <div class="my-3 h-[1px] w-15 bg-blue-500"></div>
+
+                            <p class="text-center font-serif text-black">
+                                Make the journey your own in First Class.
+                                <br class="hidden sm:block">
+                                Slide the doors closed on your Private Suite,
+                                adjust the mood lighting, and enjoy dining
+                                and entertainment on your terms.
+                            </p>
+
+                            <p class="mt-5 text-black">
+                                Explore First Class
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUSINESS CLASS -->
+
+                <div class="grid items-center gap-8 py-8 lg:grid-cols-2">
+
+                    <div class="order-2 flex justify-center lg:order-1">
+
+                        <div class="w-full max-w-xl rounded-xl p-6 shadow-2xl sm:p-10">
+
+                            <p class="text-2xl font-serif">
+                                Business Class
+                            </p>
+
+                            <div class="my-3 h-[1px] w-15 bg-blue-500"></div>
+
+                            <p class="text-center font-serif text-black">
+                                Fly Business Class and arrive inspired.
+                                <br class="hidden sm:block">
+                                Stretch out in lie-flat comfort, dine on
+                                international cuisine, and take a stroll to the
+                                A380 Onboard Lounge.
+                            </p>
+
+                            <p class="mt-5 text-black">
+                                Explore Business Class
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="order-1 flex justify-center lg:order-2">
+
+                        <img src="https://i.pinimg.com/1200x/14/90/fb/1490fbc5d0eed46ad4069376dc1d82d3.jpg"
+                            alt="Business Class" class="h-64 w-full max-w-xl rounded-xl object-cover sm:h-80">
+
+                    </div>
+
+                </div>
+
+
+                <!-- PREMIUM CLASS -->
+
+                <div class="grid items-center gap-8 py-8 lg:grid-cols-2">
+
+                    <div class="flex justify-center">
+
+                        <img src="https://i.pinimg.com/1200x/72/23/7b/72237b7b94edba5c0dedc71234854391.jpg"
+                            alt="Premium Class" class="h-64 w-full max-w-xl rounded-xl object-cover sm:h-80">
+
+                    </div>
+
+                    <div class="flex justify-center">
+
+                        <div class="w-full max-w-xl rounded-xl p-6 shadow-2xl sm:p-10">
+
+                            <p class="text-2xl font-serif">
+                                Premium Class
+                            </p>
+
+                            <div class="my-3 h-[1px] w-15 bg-blue-500"></div>
+
+                            <p class="text-center font-serif text-black">
+                                Choose a higher level of comfort and
+                                relaxation in Premium Economy. Recline your
+                                cream leather seat, extend the leg rests, and
+                                relax into a more luxurious journey.
+                            </p>
+
+                            <p class="mt-5 text-black">
+                                Explore Premium Class
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ECONOMY CLASS -->
+
+                <div class="grid items-center gap-8 py-8 lg:grid-cols-2">
+
+                    <div class="order-2 flex justify-center lg:order-1">
+
+                        <div class="w-full max-w-xl rounded-xl p-6 shadow-2xl sm:p-10">
+
+                            <p class="text-2xl font-serif">
+                                Economy Class
+                            </p>
+
+                            <div class="my-3 h-[1px] w-15 bg-blue-500"></div>
+
+                            <p class="text-center font-serif text-black">
+                                Experience an Economy Class that feels like
+                                an upgrade. Sit back in comfort, enjoy
+                                delicious multicourse meals, and lose
+                                yourself in thousands of movies, TV shows and more.
+                            </p>
+
+                            <p class="mt-5 text-black">
+                                Explore Economy Class
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="order-1 flex justify-center lg:order-2">
+
+                        <img src="https://i.pinimg.com/1200x/90/e2/d3/90e2d3d995710c49f6f1d99564c1d8a8.jpg"
+                            alt="Economy Class" class="h-64 w-full max-w-xl rounded-xl object-cover sm:h-80">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WHERE WE FLY ================= -->
+
+        <section id="wherewefly" class="scroll-mt-20 px-4 py-10 sm:px-6 lg:px-10">
+
+            <div class="text-center">
+
+                <p class="font-semibold">
+
+                    Featured destinations from
+
+                    <span class="font-bold font-serif sm:text-2xl">
+                        Philippines
+                    </span>
+
+                </p>
+
+            </div>
+
+
+            <!-- Destination Grid -->
+            <div class="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2">
+
+                <div v-for="places in destinationplaces" :key="places.id">
+
+                    <div class="overflow-hidden rounded-xl shadow-2xl">
+
+                        <img :src="places.img" :alt="places.place" class="h-64 w-full object-cover sm:h-80">
+
+                        <div class="p-5 text-center">
+
+                            <p class="font-semibold text-black">
+                                {{ places.country }}
+                            </p>
+
+                            <p class="font-bold text-black">
+                                {{ places.place }}
+                            </p>
+
+                            <p class="font-semibold text-black">
+                                {{ places.text }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="mt-10 flex justify-center">
+
+                <button
+                    class="rounded-xl border border-black bg-white px-5 py-3 text-black transition hover:bg-black hover:text-white">
+
+                    More destinations
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about" class="scroll-mt-20 px-4 py-10 sm:px-6 lg:px-10">
+
+            <div>
+
+                <div class="mt-5 flex justify-center">
+
+                    <p class="text-center font-serif text-3xl font-bold text-black">
+                        ABOUT US
+                    </p>
+
+                </div>
+
+
+                <!-- About Images -->
+                <div
+                    class="mx-auto mt-10 grid max-w-4xl grid-cols-2 justify-items-center gap-6 sm:grid-cols-4 sm:gap-10">
+
+                    <img src="https://i.pinimg.com/736x/a4/c2/56/a4c256fd317d56020997d3e1efb1e454.jpg" alt=""
+                        class="h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36 lg:h-40 lg:w-40">
+
+                    <img src="https://i.pinimg.com/1200x/13/98/95/1398958ce8b9382314fde2505b4233f2.jpg" alt=""
+                        class="h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36 lg:h-40 lg:w-40">
+
+                    <img src="https://i.pinimg.com/1200x/e5/e9/f5/e5e9f56b964421c499f1e08c42639c02.jpg" alt=""
+                        class="h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36 lg:h-40 lg:w-40">
+
+                    <img src="https://i.pinimg.com/1200x/0a/b5/d3/0ab5d3d3b068c7023944d788a30dc89b.jpg" alt=""
+                        class="h-28 w-28 rounded-full object-cover sm:h-36 sm:w-36 lg:h-40 lg:w-40">
+
+                </div>
+
+
+                <!-- About Links -->
+                <div class="mx-auto mt-6 grid max-w-4xl grid-cols-2 gap-5 text-center sm:grid-cols-4">
+
+                    <p class="text-black underline">
+                        Our Business
+                    </p>
+
+                    <p class="text-black underline">
+                        Our Planet
+                    </p>
+
+                    <p class="text-black underline">
+                        Our People
+                    </p>
+
+                    <p class="text-black underline">
+                        Our Communities
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HELP ================= -->
+
+        <section id="help" class="scroll-mt-20 px-4 py-12 sm:px-6 md:px-8 lg:px-10">
+
+            <div class="text-center">
+
+                <p class="font-serif">
+                    Help and support
+                </p>
+
+                <p class="mt-3 font-serif text-3xl font-bold">
+                    Baggage portal
+                </p>
+
+                <p class="mx-auto mt-4 max-w-3xl">
+                    Find out how much baggage and luggage you can take on board,
+                    and learn all about our baggage rules.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+
+        <section class="scroll-mt-20 px-4 py-12 sm:px-6 md:px-8 lg:px-10">
+            <div class="bg-blue-900 w-440 h-40">
+                <div>
+                <div class="flex gap-90 py-30 p-10">
+                    <div>
+                        <p class="text-white">©2021Lumé Air. All rights reserved.</p>
+                    </div>
+                    <div class="flex gap-10">
+                        <p class="text-white">Terms & Condition</p>
+                        <p class="text-white">Privacy Policy</p>
+                        <p class="text-white">Cookies Policy</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- ================= VUE ================= -->
+
+    <script>
+
+        Vue.createApp({
+
+            data() {
+
+                return {
+
+                    mobileMenu: false,
+
+                    destinationplaces: [
+
+                        {
+                            id: 1,
+                            img: 'https://i.pinimg.com/736x/4e/20/ea/4e20ea9244e3fe51997a6677b14941fd.jpg',
+                            country: 'United Kingdom',
+                            place: 'London',
+                            text: 'Discover for yourself'
+                        },
+
+                        {
+                            id: 2,
+                            img: 'https://i.pinimg.com/736x/22/47/bb/2247bb242dc10f9c29d03ac54cec68e8.jpg',
+                            country: 'United Arab Emirates',
+                            place: 'Dubai',
+                            text: 'Discover for yourself'
+                        },
+
+                        {
+                            id: 3,
+                            img: 'https://i.pinimg.com/736x/1b/ad/5c/1bad5c7a0bfc1ddd39c53516ebfb28a5.jpg',
+                            country: 'Pakistan',
+                            place: 'Karachi',
+                            text: 'Discover for yourself'
+                        },
+
+                        {
+                            id: 4,
+                            img: 'https://i.pinimg.com/736x/4d/81/67/4d8167930992e5a618c5b98100d861b0.jpg',
+                            country: 'Maldives',
+                            place: 'Malé',
+                            text: 'Discover for yourself'
+                        }
+
+                    ]
+
+                }
+
+            },
+
+            methods: {
+
+            }
+
+        }).mount('#app');
+
+    </script>
+
+</body>
+
+</html>
